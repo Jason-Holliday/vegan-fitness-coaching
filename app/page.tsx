@@ -1,4 +1,5 @@
 import About from "./components/About";
+import CoachingFormSection from "./components/CoachingFormSection";
 import Faq from "./components/Faq";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
@@ -27,6 +28,7 @@ export default function Home() {
       <Testimonials />
       <Reviews />
       <Faq />
+      <CoachingFormSection />
       <Footer />
     </div>
   );

@@ -13,7 +13,7 @@ import {
   Utensils,
   type LucideIcon,
 } from "lucide-react";
-import { useState } from "react";
+import { useId, useState } from "react";
 
 type Choice = {
   value: string;
@@ -287,15 +287,16 @@ function ContactField({
   error?: string;
   onChange: (value: string) => void;
 }) {
-  const errorId = `${id}-error`;
+  const inputId = `${useId()}-${id}`;
+  const errorId = `${inputId}-error`;
 
   return (
     <div>
-      <label htmlFor={id} className="mb-2 block text-sm font-semibold text-white">
+      <label htmlFor={inputId} className="mb-2 block text-sm font-semibold text-white">
         {label}
       </label>
       <input
-        id={id}
+        id={inputId}
         type={type}
         autoComplete={autoComplete}
         value={value}
